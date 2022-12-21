@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "bf27d160d73c7e17",
+    "type": "split",
+    "children": [
+      {
+        "id": "128d110d16b2abcf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5cf7f555d49379e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 MySQL 概述.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fffd297421fbf300",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02 SQL.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dbb9e19b2c9e8236",
+    "type": "split",
+    "children": [
+      {
+        "id": "bac09dd5d4f7139c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f99596b9c51a3408",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7db74cde7fb591e1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "87526a5bbea62dd0",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "9aec29456e1ad8c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea00759fd56d35fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "acd7cd77193357ba",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02 SQL.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "28e626ff4921de33",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "02 SQL.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "93c448c71213f1e7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "869965add5cd00aa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02 SQL.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "fffd297421fbf300",
+  "lastOpenFiles": [
+    "01 MySQL 概述.md",
+    "02 SQL.md",
+    "README.md",
+    "未命名 1.md"
+  ]
+}
