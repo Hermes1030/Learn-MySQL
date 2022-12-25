@@ -1,52 +1,39 @@
 {
   "main": {
-    "id": "bf27d160d73c7e17",
+    "id": "05457f2fe6d92818",
     "type": "split",
     "children": [
       {
-        "id": "128d110d16b2abcf",
+        "id": "1ba522b4abfd4f75",
         "type": "tabs",
         "children": [
           {
-            "id": "e5cf7f555d49379e",
+            "id": "38c4b1729ae1b4ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 MySQL 概述.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fffd297421fbf300",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02 SQL.md",
+                "file": "04 约束.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "dbb9e19b2c9e8236",
+    "id": "45a7137a0c21dea3",
     "type": "split",
     "children": [
       {
-        "id": "bac09dd5d4f7139c",
+        "id": "5ca9573db3a76679",
         "type": "tabs",
         "children": [
           {
-            "id": "f99596b9c51a3408",
+            "id": "2b723569325007d2",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -56,7 +43,7 @@
             }
           },
           {
-            "id": "7db74cde7fb591e1",
+            "id": "f919d0bc5c8365e1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -71,7 +58,7 @@
             }
           },
           {
-            "id": "87526a5bbea62dd0",
+            "id": "f4c77a4072215fc9",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -82,23 +69,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
-    "id": "9aec29456e1ad8c1",
+    "id": "0dfdd2cb129f9ddc",
     "type": "split",
     "children": [
       {
-        "id": "ea00759fd56d35fe",
+        "id": "ffddbcc62e186387",
         "type": "tabs",
         "children": [
           {
-            "id": "acd7cd77193357ba",
+            "id": "72f0193ecc4f8017",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 SQL.md",
+                "file": "04 约束.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,19 +98,19 @@
             }
           },
           {
-            "id": "28e626ff4921de33",
+            "id": "a552e5e957d3beb3",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02 SQL.md",
+                "file": "04 约束.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "93c448c71213f1e7",
+            "id": "629755cb2a2c90d6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,27 +121,39 @@
             }
           },
           {
-            "id": "869965add5cd00aa",
+            "id": "feb238f7600291c7",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "02 SQL.md"
+                "file": "04 约束.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
-  "active": "fffd297421fbf300",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "38c4b1729ae1b4ff",
   "lastOpenFiles": [
     "01 MySQL 概述.md",
     "02 SQL.md",
-    "README.md",
-    "未命名 1.md"
+    "03 函数.md",
+    "04 约束.md",
+    "未命名.canvas",
+    "README.md"
   ]
 }

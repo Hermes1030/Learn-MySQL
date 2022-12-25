@@ -1,16 +1,17 @@
 ### 通用语法
 
-1. 可以单行或多行书写，以分号结尾
+1. 可以单行或多行书写，以<font color=blue>分号结尾</font>
 
-2. 可以使用空格、缩进来增强语句的可读性
+2. 可以使用<font color=blue>空格</font>、缩进来增强语句的可读性
 
-3. 不区分大小写，关键字建议使用大写
+3. <font color=blue>不区分</font>大小写，关键字建议使用大写
 
 4. 注释
 	1. 单行注释 -- 或 #
 	2. 多行注释 /* text \*/
 
-### 分类
+### SQL 分类
+
 
 |分类|全称|说明|
 |-----|----|-----|
@@ -20,9 +21,9 @@
 |DCL|Data Control Language|数据控制语言，用来创建数据库用户，控制数据库的访问权限|
 
 
-### DDL
+### DDL 数据定义语言
 
-**数据库操作**
+#### 1）数据库操作
 
 - 查询
 ```mysql
@@ -50,7 +51,7 @@ drop database [if exists] 数据库名;
 use 数据库名;
 ```
 
-**数据表操作**
+#### 2）数据表操作
 
 - 查询所有表
 ```mysql
@@ -62,7 +63,7 @@ show tables;
 desc 表名;
 ```
 
-- 查询只当表的建表语句
+- 查询指定表的建表语句
 ```mysql
 show create table 表名;
 ```
@@ -76,7 +77,7 @@ create table 表名(
 )[comment 表注释];
 ```
 
-**数据类型**
+##### 数据类型
 
 |类型|有符号范围(signed)|无符号范围(unsigned)|描述|
 |----|------------|------------|-----|
@@ -116,7 +117,7 @@ create table 表名(
 2.员工工号（字符串类型，10位）
 3.员工姓名（字符串类型，10位）
 4.性别（男/女）
-5.年龄（不存在负数）
+5.年龄（不存在负数，无符号）
 6.身份证号（18位，考虑X结尾）
 7.入职时间（取年月日）
 
@@ -131,7 +132,7 @@ create table emp(
 ) comment '员工表';
 ```
 
-**修改表操作**
+#### 3）修改表操作
 
 - 添加字段
 ```mysql
@@ -148,7 +149,7 @@ alter table emp add nickname varchar(20) comment '昵称';
 alter table 表名 modify 字段名 新数据类型(长度);
 ```
 
-- 修改字段名和类型
+- 改变字段名和类型
 ```mysql
 alter table 表名 change 旧字段名 新字段名 类型(长度) [comment 注释] [约束];
 ```
@@ -173,7 +174,8 @@ drop table [if exists] 表名;
 truncate table 表名;
 ```
 
-### DML
+
+### DML 数据操作语言
 
 - 添加数据
 ```mysql
@@ -192,11 +194,11 @@ insert into 表名 (字段名1, 字段名2, ... ) values (值1,值2, ...),(值1,
 insert into 表名 values(值1,值2, ...),(值1,值2, ...),(值1,值2, ...);
 ```
 
-注意：
+<font color=red>注意：</font>
 
->插入数据时，指定的字段顺序需要与值的顺序是一一对应的
->字符串和日期型数据应该包含在引号内
->插入的数据大小，应该在字段的规定范围内
+>	插入数据时，指定的字段顺序需要与值的顺序是一一对应的
+>	字符串和日期型数据应该包含在<font color=blue>引号</frot>内
+>	插入的数据大小，应该在字段的规定范围内
 
 - 修改数据
 ```mysql
@@ -214,26 +216,14 @@ delete from 表名 [where 条件];
 > delete 语句不能删除某一个字段的值（可以只用update）
 
 
-
-### DQL
+### DQL 数据查询语言
 
 - 查询关键字
 ```mysql
-SELECT
-	字段列表
-FROM
-	表名列表
-WHERE
-	条件列表
-GROUP BY
-	分组字段列表
-HAVING
-	分组后条件列表
-ORDER BY
-	排序字段列表
-LIMIT
-	分页参数
+SELECT	字段列表 FROM	表名列表 WHERE	条件列表 GROUP BY	分组字段列表 HAVING	分组后条件列表 ORDER BY 排序字段列表 LIMIT 分页参数;
 ```
+
+#### 1）非条件查询
 
 - 查询多个字段
 ```mysql
@@ -251,14 +241,15 @@ select 字段1 [as 别名1],字段2 [as 别名2] ... from 表名;
 select distinct 字段列表 from 表名;
 ```
 
-**条件查询**
+#### 2）条件查询
 
 -  语法
 ```mysql
 select 字段列表 from 表名 where 条件列表;
 ```
 
-- 条件
+##### 比较运算符
+
 |比较运算符|功能|
 |-----------|-----|
 |>|大于|
@@ -275,7 +266,7 @@ select 字段列表 from 表名 where 条件列表;
 |or 或 \|\| |或者|
 |not 或 ！|非，不是|
 
-**聚合函数**
+##### 聚合函数
 
 > 将一列数据作为一个整体，进行纵向计算
 
@@ -288,52 +279,164 @@ select 字段列表 from 表名 where 条件列表;
 |avg|平均值|
 |sum|求和|
 
-语法
+- 语法
 ```mysql
 select 聚合函数(字段列表) from 表名;
 ```
 
 >所有null值不参与聚合函数计算
 
-**分组查询**
+#### 3）分组查询
 
 ```mysql
 select 字段列表 from 表名 [where 条件] group by 分组字段名 [having 分组后过滤条件];
 ```
 
-where 和 having 区别
->执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果进行一个过滤
->判断条件不同：where不能对聚合函数进行判断，而having可以
+where 和 having 区别：
 
-注意
->执行顺序：where > 聚合函数 > having
->分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无意义
+>1. 执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果进行一个过滤
+>2. 判断条件不同：where不能对聚合函数进行判断，而having可以
 
-**排序查询**
+<font color=red>注意：</font>
+
+>	执行顺序：where > 聚合函数 > having
+>	分组后，查询的字段一般为聚合函数和分组字段，查询其他字段无意义
+
+#### 4）排序查询
+
+- 语法
 ```mysql
 select 字段列表 from 表名 order by 字段1 排序方式1, 字段2 排序方式2;
 ```
+
 排序方式：
 asc：升序
 desc：降序
 
-> 如果是多个字段排序，当第一个字段值相同时，才会根据第二个字段进行排序
+> 如果是多个字段排序，当第一个<font color=blue>字段值相同</font>时，才会根据第二个字段进行排序
 
+#### 5）分页查询
 
-**分页查询**
+- 语法
 ```mysql
 select 字段列表 from 表名 limit 起始索引, 查询记录数;
 ```
-如：
+
 ```mysql
 select * from employee limit 10,10;
 ```
 
-注意：
-起始索引从0开始，起始索引=(查询页码-1)\*每页显示记录数
-分页查询是数据库的方言，不同的数据库有不同的实现，MySQL是Limit
-如果查询的是第一页数据，起始索引可以省略，直接简写为 limit 10
+<font color=red>注意：</font>
+
+> 	起始索引从0开始，起始索引=(查询页码-1)\*每页显示记录数
+> 	分页查询是数据库的方言，不同的数据库有不同的实现，MySQL是Limit
+> 	如果查询的是第一页数据，起始索引可以省略，直接简写为 limit 10
+
+案例
+```mysql
+# 1.查询年龄为20，21，22，23岁的女性员工的信息
+select * from employee where gender = '女' and age in(20,21,22,23);
+
+# 2.查询性别为男，并且年龄在20-40岁（含）以内的姓名为三个字的员工
+select * from employee where gender = '男' and age between 20 and 40  and name like '___';
+
+# 3.统计员工表中，年龄小于60岁的男性员工和女性员工的人数
+select gender,count(*) from employee where age < 60 group by gender; 
+
+# 4.查询所有年龄小于等于35岁员工的姓名和年龄，并对查询结果按年龄升序排序，如果年龄相同按入职时间降序排序
+select name,age from employee where age <= 35 order by age asc,workentry desc;
+
+# 5.查询性别为男，且年龄在20-40岁（含）以内的前5个员工信息，对查询的结果按年龄升序排序，年龄相同按入职时间升序排序
+select * from employee where gender = '男' and age between 20 and 40 order by age asc,workentry asc limit 5;
+```
+
+**执行顺序**
+
+> 编写顺序：select > from > where > group by > aving > order by > limit
+> 执行顺序：from > where > group by > having > select > order by > limit
+
+### DCL 数据控制语言
+
+#### 用户管理
+
+- 创建用户
+```mysql
+create user '用户名'@'登录域' identified by '密码';
+```
+
+- 修改用户密码
+```mysql
+alter user '用户名'@'登录域' identified with mysql_native_password by '新密码';
+```
+
+- 删除密码
+```mysql
+drop user '用户名'@'登录域';
+```
+
+案例
+```mysql
+# 创建用户 gao 只能在当前主机localhost访问，密码123456
+CREATE user 'gao'@'localhost' IDENTIFIED BY '123456';
+
+# 创建用户 heima，可以在任意主机访问该数据库，密码5821156
+CREATE user 'heima'@'%' IDENTIFIED BY '5821156';
+
+# 修改用户heima的访问密码 ‘12345678’
+ALTER user 'heima'@'%' IDENTIFIED WITH mysql_native_password by '12345678';
+
+# 删除heima用户
+drop user 'heima'@'%';
+```
+
+<font color=red>注意：</font>
+>	登录域可以使用%通配
+>	这类SQL开发人员操作的比较少，主要是（DBA，Database Administrator 数据库管理员）使用。
+
+#### 权限控制
+
+##### 权限说明
+
+|权限|说明|
+|------|------|
+|ALL，ALL PRIVILEGES|所有权限|
+|SELECT|查询数据|
+|INSERT|插入数据|
+|UPDATE|修改数据|
+|DELETE|删除数据|
+|ALTER|修改表|
+|DROP|删除数据库/表/视图|
+|CREATE|创建数据库/表|
 
 
-### DCL
+- 查询权限
+```mysql
+show grants for '用户名'@'登录域';
+```
+
+- 授予权限
+```mysql
+grant 权限列表 on 数据库名.表名 to '用户'@'登录域';
+```
+
+- 撤销权限
+```mysql
+revoke 权限列表 on 数据库名.表名 from '用户名'@'登录域';
+```
+
+案例
+```mysql
+# 查询用户权限
+show grants for 'gao'@'localhost';
+
+# 授予权限
+grant all on itcast.* to 'gao'@'localhost';
+
+# 撤销权限
+REVOKE all ON itcast.* FROM 'gao'@'localhost';
+```
+
+<font color=red>注意：</font>
+>	多个权限之间，使用逗号分隔
+>	授权时，数据库名和表名可以使用\*进行统配，代表所有
 

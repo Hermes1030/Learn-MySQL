@@ -1,1 +1,14 @@
-{}
+{
+  "editor:insert-tag": [],
+  "editor:toggle-italics": [],
+  "editor:toggle-highlight": [],
+  "workspace:new-tab": [],
+  "outline:open": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "T"
+    }
+  ]
+}
